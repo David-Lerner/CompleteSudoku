@@ -3,13 +3,25 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
-    <application
+    <application>
+        <activity android:name="com.facebook.FacebookActivity"
+              android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+              android:theme="@android:style/Theme.Translucent.NoTitleBar"
+              android:label="@string/app_name" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+                   android:value="1172523412805682"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider1172523412805682"
+              android:name="com.facebook.FacebookContentProvider"
+              android:exported="true"/>
         android:name=".CompleteSudoku"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
