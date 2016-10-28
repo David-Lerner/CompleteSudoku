@@ -7,7 +7,10 @@ import com.parse.Parse;
 /**
  * Created by enkhturbadamsaikhan on 9/21/16.
  */
+
 public class CompleteSudoku extends Application {
+
+
     @Override
     public void onCreate() {
         Parse.Configuration.Builder builder = new Parse.Configuration.Builder(this);
