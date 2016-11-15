@@ -11,6 +11,13 @@
     <string name="tv_emailText">e-mail</string>
     <string name="facebook_app_id">319420035104261</string>
     <string name="fb_login_protocol_scheme">fb319420035104261</string>
+    <string name="title_activity_nav">navActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--<string name="facebook_app_id">1172523412805682</string>-->
 </resources>

@@ -3,6 +3,7 @@ package com.example.enkhturbadamsaikhan.completesudoku;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -142,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
                 if (parseUser != null) {
                     //progressDialog.dismiss();
                     getUserDetailFromParse();
+                    Intent i = new Intent(MainActivity.this, navActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
                 } else {
                     //progressDialog.dismiss();
                     alertDisplayer("Login Fail", e.getMessage()+" Please re-try");
@@ -164,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
                     t_username.setText(ParseUser.getCurrentUser().getUsername());
                     t_email.setText(ParseUser.getCurrentUser().getEmail());
                     saveNewUser();
+//                    Intent i = new Intent(MainActivity.this, navActivity.class);
+//                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    startActivity(i);
                 } else {
                     //progressDialog.dismiss();
                     alertDisplayer("Register Fail", e.getMessage());
