@@ -11,6 +11,11 @@
     <string name="tv_emailText">e-mail</string>
     <string name="facebook_app_id">319420035104261</string>
     <string name="fb_login_protocol_scheme">fb319420035104261</string>
+    <string name="tv_newSudoku">New Sudoku</string>
+    <string name="easyButton">EASY</string>
+    <string name="mediumButton">MEDIUM</string>
+    <string name="hardButton">HARD</string>
+    <string name="extremeButton">EXTREME</string>
 
     <!--<string name="facebook_app_id">1172523412805682</string>-->
 </resources>
