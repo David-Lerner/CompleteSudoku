@@ -11,6 +11,8 @@
     <string name="tv_emailText">e-mail</string>
     <string name="facebook_app_id">319420035104261</string>
     <string name="fb_login_protocol_scheme">fb319420035104261</string>
+    <string name="b_register_login">Register</string>
+    <string name="b_guest">Play as a guest</string>
 
     <!--<string name="facebook_app_id">1172523412805682</string>-->
 </resources>
