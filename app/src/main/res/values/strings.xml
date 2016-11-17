@@ -16,6 +16,11 @@
     <string name="mediumButton">MEDIUM</string>
     <string name="hardButton">HARD</string>
     <string name="extremeButton">EXTREME</string>
+    <string name="tv_loadSudoku">Load Sudoku</string>
+    <string name="savedGames">Saved Games</string>
+    <string name="uploadButton">Upload New</string>
+    <string name="loadButton">Load</string>
+    <string name="cancelButton">Cancel</string>
 
     <!--<string name="facebook_app_id">1172523412805682</string>-->
 </resources>

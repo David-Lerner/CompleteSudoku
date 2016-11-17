@@ -45,7 +45,9 @@
         <!-- <provider android:authorities="com.facebook.app.FacebookContentProvider319420035104261" -->
         <!-- android:name="com.facebook.FacebookContentProvider" -->
         <!-- android:exported="true"/> -->
-        <activity android:name=".guestActivity"></activity>
+        <activity android:name=".guestActivity" />
+        <activity android:name=".userMenuActivity" />
+        <activity android:name=".savedGamesActivity"></activity>
     </application>
 
 </manifest>
