@@ -1,119 +1,84 @@
 package com.example.enkhturbadamsaikhan.completesudoku;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText et_email;
-    EditText et_username;
+    EditText email;
+    EditText username;
     Button register;
-    TextView t_username;
-    TextView t_email;
+    EditText password;
+    EditText passwordRetype;
 
-    ProgressDialog progressDialog;
-    final List<String> permissions = Arrays.asList("public_profile", "email");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        et_username = (EditText) findViewById(R.id.et_username_register);
-        et_email = (EditText) findViewById(R.id.et_email_register);
+        username = (EditText) findViewById(R.id.et_username_register);
+        email = (EditText) findViewById(R.id.et_email_register);
+        password = (EditText) findViewById(R.id.et_password_register);
+        passwordRetype = (EditText) findViewById(R.id.et_passwordRT_register);
 
         register = (Button) findViewById(R.id.b_register);
-
-        t_username = (TextView) findViewById(R.id.tv_username_register);
-        t_email = (TextView) findViewById(R.id.tv_email_register);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                progressDialog.setMessage("Please Wait");
-//                progressDialog.setTitle("Registering");
-//                progressDialog.show();
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            parseRegister();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).start();
-            }
-        });
-
-    }
-
-    void parseRegister(){
-        ParseUser user = new ParseUser();
-        user.setUsername(et_username.getText().toString());
-        user.setPassword(et_email.getText().toString());
-        user.setEmail(et_email.getText().toString());
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-
-                    //progressDialog.dismiss();
-                    t_username.setText(ParseUser.getCurrentUser().getUsername());
-                    t_email.setText(ParseUser.getCurrentUser().getEmail());
-                    saveNewUser();
-
-                    Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(i);
+                if(username.getText().toString().equals("")) {
+                    Toast a = Toast.makeText(getApplicationContext(), "Please enter your username", Toast.LENGTH_LONG);
+                    a.show();
                 } else {
-                    //progressDialog.dismiss();
-                    alertDisplayer("Register Fail", e.getMessage());
+                    // Checking if same password is typed twice
+                    String pass = password.getText().toString();
+                    String passCheck = passwordRetype.getText().toString();
+
+                    if(pass.equals(passCheck)){
+                        ParseUser user = new ParseUser();
+                        Toast b = Toast.makeText(getApplicationContext(), "User created", Toast.LENGTH_SHORT);
+                        b.show();
+                        user.setUsername(username.getText().toString());
+                        user.setEmail(email.getText().toString());
+                        user.setPassword(pass);
+
+                        user.signUpInBackground(new SignUpCallback() {
+                            public void done(ParseException e) {
+                                if (e == null) {
+                                    // Hooray! Let them use the app now.
+                                    Toast a = Toast.makeText(getApplicationContext(), "You are signed up, please log in", Toast.LENGTH_LONG);
+                                    a.show();
+                                    Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    startActivity(i);
+                                    finish();
+                                } else {
+                                    // Sign up didn't succeed. Look at the ParseException
+                                    // to figure out what went wrong
+                                    Toast a = Toast.makeText(getApplicationContext(), "That username may be taken or something went wrong",
+                                            Toast.LENGTH_LONG);
+                                    a.show();
+                                }
+                            }
+                        });
+
+                    }
+                    else{
+                        Toast a = Toast.makeText(getApplicationContext(), "Please type the same Passwords", Toast.LENGTH_LONG);
+                        a.show();
+                    }
                 }
             }
         });
-    }
-
-    void saveNewUser(){
-        ParseUser user = ParseUser.getCurrentUser();
-        user.setUsername(t_username.getText().toString());
-        user.setEmail(t_email.getText().toString());
-        user.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                alertDisplayer("Register Successful Welcome", "User:" + t_username.getText().toString() + " Login.Email:" + t_email.getText().toString());
-            }
-        });
-    }
-
-    void alertDisplayer(String title,String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this)
-                .setTitle(title)
-                .setMessage(message)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog ok = builder.create();
-        ok.show();
     }
 
 }

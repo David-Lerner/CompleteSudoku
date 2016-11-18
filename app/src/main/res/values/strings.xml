@@ -13,6 +13,9 @@
     <string name="fb_login_protocol_scheme">fb319420035104261</string>
     <string name="b_register_login">Register</string>
     <string name="b_guest">Play as a guest</string>
+    <string name="b_logout_main">Logout</string>
+    <string name="tv_password_register">Password</string>
+    <string name="tv_passwordRT_register">Retype Password</string>
 
     <!--<string name="facebook_app_id">1172523412805682</string>-->
 </resources>

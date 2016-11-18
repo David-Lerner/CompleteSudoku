@@ -12,25 +12,12 @@
     tools:context="com.example.enkhturbadamsaikhan.completesudoku.MainActivity">
 
 
-    <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_emailText"
-        android:text="@string/tv_emailText"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_usernameText"
-        android:text="@string/tv_usernameText"
-        android:textSize="20sp"
-        android:layout_above="@+id/tv_emailText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_centerHorizontal="true"
+        android:id="@+id/b_logout_main"
+        android:text="@string/b_logout_main"/>
 
 </RelativeLayout>
 
