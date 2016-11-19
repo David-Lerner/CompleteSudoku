@@ -22,7 +22,7 @@ public class IntroActivity extends AppCompatActivity {
         Intent intent;
 
             if( ParseUser.getCurrentUser() != null){
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, userMenuActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -51,7 +51,7 @@ public class IntroActivity extends AppCompatActivity {
             guest.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(IntroActivity.this, MainActivity.class);
+                    Intent i = new Intent(IntroActivity.this, guestActivity.class);
                     startActivity(i);
                 }
             });

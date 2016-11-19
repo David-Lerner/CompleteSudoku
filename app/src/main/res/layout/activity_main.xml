@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,12 +13,14 @@
     tools:context="com.example.enkhturbadamsaikhan.completesudoku.MainActivity">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/sudoku_grid"
         android:layout_centerHorizontal="true"
-        android:id="@+id/b_logout_main"
-        android:text="@string/b_logout_main"/>
+        android:layout_marginTop="18dp"
+        android:id="@+id/imageView"/>
 
 </RelativeLayout>
 
