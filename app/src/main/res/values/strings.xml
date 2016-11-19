@@ -16,6 +16,21 @@
     <string name="b_logout_main">Logout</string>
     <string name="tv_password_register">Password</string>
     <string name="tv_passwordRT_register">Retype Password</string>
+    <string name="tv_newSudoku">New Sudoku</string>
+    <string name="easyButton">Easy</string>
+    <string name="mediumButton">Medium</string>
+    <string name="hardButton">Hard</string>
+    <string name="extremeButton">Extreme</string>
+    <string name="savedSudokuButton">Saved games</string>
+    <string name="uploadButton">Upload</string>
+    <string name="tv_savedGames">Saved Games</string>
+    <string name="loadButton">Load</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="tv_loadSudoku">Load Sudoku</string>
+    <string name="tv_upload_title">Upload Puzzle</string>
+    <string name="b_upload_image">From  Image</string>
+    <string name="b_upload_camera">From Camera</string>
+    <string name="b_upload_upload">Upload</string>
 
     <!--<string name="facebook_app_id">1172523412805682</string>-->
 </resources>

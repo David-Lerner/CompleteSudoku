@@ -19,13 +19,13 @@
         android:layout_alignParentEnd="true">
 
     <TextView
-        android:text="@string/savedGames"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_newSudoku"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:text="@string/tv_savedGames"/>
 
         <ListView
             android:layout_width="match_parent"

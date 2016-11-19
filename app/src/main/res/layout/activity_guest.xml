@@ -47,7 +47,7 @@
                 android:text="@string/easyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/easyButton"
+                android:id="@+id/easyButton_guest"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1" />
@@ -56,7 +56,7 @@
                 android:text="@string/mediumButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/mediumButton"
+                android:id="@+id/mediumButton_guest"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1" />
@@ -71,7 +71,7 @@
                 android:text="@string/hardButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hardButton"
+                android:id="@+id/hardButton_guest"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1" />
@@ -80,7 +80,7 @@
                 android:text="@string/extremeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/extremeButton"
+                android:id="@+id/extremeButton_guest"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1" />
